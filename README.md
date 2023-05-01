@@ -1,3 +1,5 @@
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+
 ## What is Unit of Work?
 Unit of Work is a design pattern used in applications that handle data persistence. It is responsible for managing transactions and ensuring that all operations related to a specific unit of work are completed successfully or undone if an error occurs.
 
