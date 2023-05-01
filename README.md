@@ -29,7 +29,7 @@ In simple terms, the Unit of Work is an object that stores all changes made to o
     }
   }
 ```
-The provided code uses a class called Uow to manage transactions. When Uow.startTrans() is called, a new transaction is started. Then, some operations are performed, such as generating a user's password hash, creating a new user, and creating a document for that user. If an exception occurs while creating the document, the transaction is rolled back (Uow.rollback()) and the exception is thrown again. Otherwise, the transaction is committed (Uow.commit()) and the created user is returned.
+The provided code uses a class called Uow to manage transactions. When ```Uow.startTrans()``` is called, a new transaction is started. Then, some operations are performed, such as generating a user's password hash, creating a new user, and creating a document for that user. If an exception occurs while creating the document, the transaction is rolled back ```(Uow.rollback())``` and the exception is thrown again. Otherwise, the transaction is committed ```(Uow.commit())``` and the created user is returned.
 
 This approach ensures that all operations are either successfully completed or undone in case of failure, preventing inconsistencies in the database.
 
