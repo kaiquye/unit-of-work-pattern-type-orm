@@ -8,8 +8,9 @@ In simple terms, the Unit of Work is an object that stores all changes made to o
 ## Example
 
 ```js 
-      // start transaction
+      // == start transaction
       await Uow.startTrans();
+      // ====================
       data.password = await PasswordHashUtil.generate(data.password);
       const createdManager = await this.userRep.save(userMapper);
       try {
@@ -19,12 +20,14 @@ In simple terms, the Unit of Work is an object that stores all changes made to o
           user_id: createdManager.id,
         });
       } catch (createDocumentException) {
-        // rollback
+        // == rollback
         await Uow.rollback();
+        // ====================
         throw createDocumentException;
       }
-      // commit
+      // == commit
       await Uow.commit();
+      // ====================
       return createdManager;
     }
   }
